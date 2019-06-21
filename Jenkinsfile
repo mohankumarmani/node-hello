@@ -13,9 +13,9 @@ pipeline {
         }
         stage('Compile') {
             steps {
-                sh "apt-get update"
-				sh "apt-get install nodejs"
-			    sh "apt-get install npm"
+                sh "curl -sL https://rpm.nodesource.com/setup_10.x | sudo bash -"
+				sh "yum install nodejs"
+			    sh "yum install npm"
             }
         }
 
