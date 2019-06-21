@@ -1,7 +1,9 @@
 //Jenkins file for eci-adapter-yardcrane micro service
 
 pipeline {
-    agent any
+    agent {
+        label 'linux' 
+    }
     stages {
         stage('Clean') {
             steps {
