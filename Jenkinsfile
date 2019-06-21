@@ -14,8 +14,8 @@ pipeline {
         stage('Compile') {
             steps {
                 sh "curl -sL https://rpm.nodesource.com/setup_10.x | sudo bash -"
-				sh "yum install nodejs"
-			    sh "yum install npm"
+				sh "yum install nodejs -y"
+			    sh "yum install npm -y"
             }
         }
 
