@@ -2,7 +2,7 @@
 
 pipeline {
     agent {
-        label 'linux' 
+        label 'chn-linux' 
     }
     stages {
         stage('Clean') {
@@ -11,16 +11,15 @@ pipeline {
                 
             }
         }
-        stage('Compile') {
+        stage('Test npm') {
             steps {
-                sh "curl -sL https://rpm.nodesource.com/setup_10.x | sudo bash -"
-				sh "yum install nodejs -y"
+                sh "node --version"
 			    }
         }
 
-        stage('Jar') {
+        stage('Test Docker') {
             steps {
-                echo 'Building javadoc jar'
+                echo 'docker test'
                 sh "docker ps"
             }
         }
