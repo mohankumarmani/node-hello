@@ -5,26 +5,20 @@ pipeline {
     stages {
         stage('Clean') {
             steps {
-                sh ""
+                sh "hostname"
                 
             }
         }
         stage('Compile') {
             steps {
-                sh ""
+                sh "npm install"
             }
         }
 
         stage('Jar') {
             steps {
-                echo 'Building executable jar'
-                sh "./gradlew jar"
-
-                echo 'Building sourcecode jar'
-                sh "./gradlew sourcesJar"
-
                 echo 'Building javadoc jar'
-                sh "./gradlew javadocJar"
+                sh "docker ps"
             }
         }
 
