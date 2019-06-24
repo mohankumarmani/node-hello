@@ -27,7 +27,7 @@ pipeline {
         stage('Docker build') {
             steps {
                 echo "Docker build" 
-				sh "$(aws ecr get-login --no-include-email --region us-east-1)"
+				sh "aws ecr get-login --no-include-email --region ap-south-1"
                 sh "docker build -t devopstest ."
 				sh "docker tag devopstest:latest 128144341703.dkr.ecr.ap-south-1.amazonaws.com/devopstest:latest"
             }
