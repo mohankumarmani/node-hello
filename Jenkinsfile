@@ -7,7 +7,7 @@ pipeline {
     stages {
         stage('Clean') {
             steps {
-                sh "hostname"
+                sh "docker system prune -a"
                 
             }
         }
@@ -20,7 +20,7 @@ pipeline {
         stage('Test Docker') {
             steps {
                 echo 'docker test'
-                sh "docker ps"
+                sh "docker version"
             }
         }
 
